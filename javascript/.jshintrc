@@ -56,8 +56,5 @@
   "maxlen": 120,
 
   // Enforce placing 'use strict' at the top function scope
-  "strict": false,
-
-  // Suppress warnings about comma-first coding style
-  "laxcomma": true
+  "strict": false
 }
