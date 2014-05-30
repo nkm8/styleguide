@@ -363,7 +363,7 @@
     var superPower = new SuperPower();
     ```
 
-  - Use one `var` declaration for multiple variables and declare each variable on a newline with a leading comma
+  - Use one `var` declaration for each variable and declare each variable on a new line.
 
     ```javascript
     // bad
