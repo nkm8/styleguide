@@ -637,7 +637,33 @@
 
 ## Comments
 
-  - Use `/** ... */` for multiline comments. Include a description, specify types and values for all parameters and return values.
+  - Use `/* ... */` for unstructured, informational, multiline comments.
+
+    ```javascript
+    // bad
+    // parseInt was the reason my code was slow.
+    // Bitshifting the String to coerce it to a
+    // Number made it a lot faster.
+    var val = inputValue >> 0; 
+
+    // bad (due to beginning comment with `/**`)
+    /**
+     * parseInt was the reason my code was slow.
+     * Bitshifting the String to coerce it to a
+     * Number made it a lot faster.
+     */
+    var val = inputValue >> 0; 
+
+    // good
+    /*
+     * parseInt was the reason my code was slow.
+     * Bitshifting the String to coerce it to a
+     * Number made it a lot faster.
+     */
+    var val = inputValue >> 0; 
+    ```
+
+  - Use `/** ... */` for multiline comments that will be parsed by documentation generators. Include a description, specify types and values for all parameters and return values.
 
     ```javascript
     // bad
