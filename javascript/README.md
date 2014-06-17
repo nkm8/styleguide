@@ -348,6 +348,21 @@
     var isJedi = getProp('jedi');
     ```
 
+  - Use subscript notation `[]` when accessing a property which has a name that is incompatible with dot notation.
+
+    ``` javascript
+    var luke = {
+      'is.jedi': true
+      age: 28
+    };
+
+    // bad & will not execute as expected
+    var isJedi = luke.is.jedi;
+
+    // good
+    var isJedi = luke['is.jedi'];
+    ```
+
   - Ensure nested properties exist before operating on them.
 
     ```javascript
