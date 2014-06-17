@@ -348,6 +348,23 @@
     var isJedi = getProp('jedi');
     ```
 
+  - Ensure nested properties exist before operating on them.
+
+    ```javascript
+    var person = {
+      name: {
+        first: 'Luke',
+        last: 'Skywalker'
+      }
+    };
+
+    // bad
+    var capitalizedMiddleName = person.name.middle.toUpperCase();
+
+    // good
+    var capitalizedMiddleName = person.name && person.name.middle && person.name.middle.toUpperCase();
+    ```
+
 **[⬆ back to top](#table-of-contents)**
 
 
