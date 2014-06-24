@@ -1141,7 +1141,7 @@
     function() {
       var _self = this;
       return function() {
-        console.log(self);
+        console.log(_self);
       };
     }
 
@@ -1157,7 +1157,7 @@
     function() {
       var _this = this;
       return function() {
-        console.log(that);
+        console.log(_this);
       };
     }
     
@@ -1165,7 +1165,7 @@
     function() {
       var self = this;
       return function() {
-        console.log(_this);
+        console.log(self);
       };
     }
     ```
