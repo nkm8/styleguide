@@ -262,16 +262,26 @@
   - Function expressions:
 
     ```javascript
-    // anonymous function expression
+    // anonymous function expression - not hoisted
+    anonymous(); // undefined
     var anonymous = function() {
       return true;
     };
+    anonymous(); // true
 
-    // named function expression
-    var named = function named() {
-      return true;
+    // named function expression - hoisted
+    named(); // 'function'
+    bar(); // undefined
+    var named = function bar() {
+      return typeof bar;
     };
-
+    typeof bar; // 'undefined'
+    ```
+    
+  - To aid in debugging, named functions should always be preferred over anonymous functions.
+  - To read more about the differences between named/anonymous functions, [read Function Names in Debuggers](http://kangax.github.io/nfe/#names-in-debuggers)
+    
+    ```javascript
     // immediately-invoked function expression (IIFE)
     (function() {
       console.log('Welcome to the Internet. Please follow me.');
@@ -1509,6 +1519,7 @@
   - [Basic JavaScript for the impatient programmer](http://www.2ality.com/2013/06/basic-javascript.html) - Dr. Axel Rauschmayer
   - [You Might Not Need jQuery](http://youmightnotneedjquery.com/) - Zack Bloom & Adam Schwartz
   - [ES6 Features](https://github.com/lukehoban/es6features) - Luke Hoban
+  - [Named Function Expressions Demystified](http://kangax.github.io/nfe/) - Juriy "kangax" Zaytsev
 
 **Books**
 
